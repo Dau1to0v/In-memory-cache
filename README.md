@@ -21,17 +21,17 @@ import (
 func main() {
 	c := cache.NewCache()
 
-  // Добавляем 
+  	// Добавляем 
 	c.Set("key", "value")
 
-  // Извлекаем значение по ключу
+  	// Извлекаем значение по ключу
 	if val, ok := c.Get("key"); ok {
 		fmt.Println("Found:", val)
 	} else {
 		fmt.Println("Not Found")
 	}
 
-  // Удаляем значение по ключу
+  	// Удаляем значение по ключу
 	c.Delete("key")
 	if _, ok := c.Get("key"); ok {
 		fmt.Println("Not deleted")
@@ -39,7 +39,7 @@ func main() {
 		fmt.Println("Deleted")
 	}
 
-  // Очищаем весь кэш
+  	// Очищаем весь кэш
 	c.Set("Key1", "Value1")
 	c.Clear()
 	if _, ok := c.Get("Key1"); !ok {
